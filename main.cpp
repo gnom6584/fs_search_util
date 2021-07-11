@@ -3,8 +3,6 @@
 #include <filesystem>
 #include <regex>
 
-constexpr const auto HELP_FLAG = "-h";
-
 constexpr const auto RECURSIVE_FLAG = "-r";
 
 constexpr const auto INDEXED_FLAG = "-i";
@@ -52,7 +50,7 @@ int main(int argc, char* argv[]) {
 				recursive = true;
 			else {
 				cerr << "Invalid flag: " << argv[i] << endl;
-				exit(1);
+				exit(0);
 			}
 		}
 
