@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/batya_search.dir/main.cpp.o  -o batya_search 
