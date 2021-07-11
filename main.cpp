@@ -5,9 +5,9 @@
 
 constexpr const auto HELP_FLAG = "-h";
 
-constexpr const auto DIRECTORY_FLAG = "-d";
-
 constexpr const auto RECURSIVE_FLAG = "-r";
+
+constexpr const auto INDEXED_FLAG = "-i";
 
 constexpr const auto HELP_MESSAGE =
 	"\nbatya_search [-flags] . [regex] - search in current directory recursively.\n"
@@ -46,9 +46,9 @@ int main(int argc, char* argv[]) {
 
 	if(argc > 3)
 		for(size_t i = argc - 3; i > 0; --i) {
-			if (strcmp(argv[i], "-i") == 0)
+			if (strcmp(argv[i], INDEXED_FLAG) == 0)
 				indexed = true;
-			else if (strcmp(argv[i], "-r") == 0)
+			else if (strcmp(argv[i], RECURSIVE_FLAG) == 0)
 				recursive = true;
 			else {
 				cerr << "Invalid flag: " << argv[i] << endl;
@@ -65,7 +65,6 @@ int main(int argc, char* argv[]) {
 		cout << directory << " is not directory!" << endl;
 		exit(1);
 	}
-
 
 	cout << endl << "Search in directory = " << directory << ": " << endl << endl;
 
